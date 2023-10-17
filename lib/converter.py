@@ -179,8 +179,12 @@ class Converter(QtCore.QThread):
         for pdf_image_index, pdf_image in enumerate(pdf_images):
             # Detects the orientation of the document.
             self.__emit_status_event(f'Detecting orientation of page {pdf_image_index} from file {in_file_path}')
-            angle = pyocr.libtesseract.detect_orientation(pdf_image, lang='nld')['angle']
-            self.__emit_log_event(f'Detected orientation of angle {angle} for page {pdf_image_index}')
+            try:
+                angle = pyocr.libtesseract.detect_orientation(pdf_image, lang='nld')['angle']
+                self.__emit_log_event(f'Detected orientation of angle {angle} for page {pdf_image_index}')
+            except pyocr.libtesseract.TesseractError:
+                angle = 0
+                self.__emit_log_event(f'Orientation detection failed for page {pdf_image_index}')
 
             # Rotates the image based on the detected angle.
             self.__emit_log_event(f'Rotating page {pdf_image_index} by angle {angle}')
