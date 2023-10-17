@@ -3,7 +3,7 @@ import sys
 import time
 from pathlib import Path
 from PySide6 import QtCore, QtWidgets, QtGui
-from lib import Converter, ConverterUpdateEvent, ConverterLogEvent
+from stuff import Converter, ConverterUpdateEvent, ConverterLogEvent
 from time import time
 
 
