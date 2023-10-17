@@ -12,7 +12,7 @@ jobs:
     - name: Package Application
       uses: JackMcKew/pyinstaller-action-windows@python3-10-pyinstaller-5-3
       with:
-        path: src
+        path: ./src
     - name: Zip
       run: zip -r windows.zip src/dist/windows
     - uses: ncipollo/release-action@v1
