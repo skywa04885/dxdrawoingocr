@@ -88,10 +88,10 @@ class MyWindowWidget(QtWidgets.QWidget):
     def __init__(self) -> None:
         super().__init__()
 
-        self.in_dir_path = Path.cwd().absolute() / 'input'
-        self.out_dir_path = Path.cwd().absolute() / 'output'
-        self.fail_dir_path = Path.cwd().absolute() / 'failure'
-        self.finished_dir_path = Path.cwd().absolute() / 'finished'
+        self.in_dir_path = Path.home() / 'dx-drawing-ocr' / 'input'
+        self.out_dir_path = Path.home() / 'dx-drawing-ocr' / 'output'
+        self.fail_dir_path = Path.home() / 'dx-drawing-ocr' / 'failure'
+        self.finished_dir_path = Path.home() / 'dx-drawing-ocr' / 'finished'
 
         self.grid = QtWidgets.QGridLayout(self)
 
