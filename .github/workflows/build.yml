@@ -16,7 +16,7 @@ jobs:
       with:
         path: ./src
     - name: Zip
-      run: zip -r windows.zip src/dist/windows
+      run: pushd . && cd ./src/dist/windows && zip -r ../../../windows.zip main && popd
     - uses: ncipollo/release-action@v1
       with:
         artifacts: windows.zip

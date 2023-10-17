@@ -88,10 +88,12 @@ class MyWindowWidget(QtWidgets.QWidget):
     def __init__(self) -> None:
         super().__init__()
 
-        self.in_dir_path = Path.home() / 'dx-drawing-ocr' / 'input'
-        self.out_dir_path = Path.home() / 'dx-drawing-ocr' / 'output'
-        self.fail_dir_path = Path.home() / 'dx-drawing-ocr' / 'failure'
-        self.finished_dir_path = Path.home() / 'dx-drawing-ocr' / 'finished'
+        drawings_path = Path.home() / 'Werktekeningen'
+        self.in_dir_path = drawings_path / 'Import'
+        self.out_dir_path = drawings_path / 'Archief'
+        self.fail_dir_path = drawings_path / 'Handmatig'
+        self.finished_dir_path = drawings_path / 'Verwerkt'
+        self.temp_dir_path = drawings_path / 'Temp'
 
         self.grid = QtWidgets.QGridLayout(self)
 
@@ -172,7 +174,7 @@ class MyWindowWidget(QtWidgets.QWidget):
 
     @QtCore.Slot()
     def on_process_btn_clicked(self) -> None:
-        converter = Converter.build(self.in_dir_path, self.out_dir_path, self.fail_dir_path, Path.cwd() / 'temp', self.finished_dir_path)
+        converter = Converter.build(self.in_dir_path, self.out_dir_path, self.fail_dir_path, self.temp_dir_path, self.finished_dir_path)
         my_status_window = MyStatusWindow(converter)
         my_status_window.exec()
 
