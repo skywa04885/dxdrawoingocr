@@ -26,5 +26,4 @@ Om de DX drawing OCR te installeren moet het `windows.zip` bestand van de laatst
 release gedownload worden. Deze is rechts in het scherm te zien. Hiervan kan dan de inhoudt
 in de `C:\Program Files\DXDrawingOCR` map gezet worden. Hierna kan dan een snelkoppeling gemaakt worden.
 
-Als laast, kopieer de inhoudt van de `C:\Program Files\Tesseract-OCR` map naar de `C:\Program Files\DXDrawingOCR\_internal` map
-die in de map
+Als laast, kopieer de inhoudt van de `C:\Program Files\Tesseract-OCR` map naar de `C:\Program Files\DXDrawingOCR\_internal` map.
