@@ -14,7 +14,7 @@ jobs:
       with:
         path: src
     - name: Zip
-      run: zip -r windows.zip dist/windows
+      run: zip -r windows.zip src/dist/windows
     - uses: ncipollo/release-action@v1
       with:
         artifacts: windows.zip
